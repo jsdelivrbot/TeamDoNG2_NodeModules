@@ -1341,7 +1341,7 @@ __decorate$5([
 exports.LoadingComponent = __decorate$5([
     _angular_core.Component({
         selector: 'LoadingComponent, tree-loading-component',
-        template: "<span *ngIf=\"!template\">loading...</span>\n  <template [ngTemplateOutlet]=\"template\"></template>",
+        template: "<span *ngIf=\"!template\">loading...</span>\n  <ng-template [ngTemplateOutlet]=\"template\"></ng-template>",
     }),
     __metadata$3("design:paramtypes", [_angular_core.ElementRef])
 ], exports.LoadingComponent);
@@ -1552,7 +1552,7 @@ exports.TreeNodeComponent = __decorate$7([
             '.node-content-wrapper.is-dragging-over { background: #ddffee; box-shadow: inset 0 0 1px #999; }',
             '.node-content-wrapper.is-dragging-over-disabled { opacity: 0.5 }'
         ],
-        template: "\n    <div *mobxAutorun>\n      <div\n        *ngIf=\"!templates.treeNodeFullTemplate\"\n        class=\"tree-node tree-node-level-{{ node.level }}\"\n        [class]=\"node.getClass()\"\n        [class.tree-node-expanded]=\"node.isExpanded && node.hasChildren\"\n        [class.tree-node-collapsed]=\"node.isCollapsed && node.hasChildren\"\n        [class.tree-node-leaf]=\"node.isLeaf\"\n        [class.tree-node-active]=\"node.isActive\"\n        [class.tree-node-focused]=\"node.isFocused\">\n\n        <tree-node-drop-slot *ngIf=\"index === 0\" [dropIndex]=\"node.index\" [node]=\"node.parent\"></tree-node-drop-slot>\n\n          <div class=\"node-wrapper\" [style.padding-left]=\"node.getNodePadding()\">\n            <tree-node-expander [node]=\"node\"></tree-node-expander>\n            <div class=\"node-content-wrapper\"\n              (click)=\"node.mouseAction('click', $event)\"\n              (dblclick)=\"node.mouseAction('dblClick', $event)\"\n              (contextmenu)=\"node.mouseAction('contextMenu', $event)\"\n              (treeDrop)=\"node.onDrop($event)\"\n              [treeAllowDrop]=\"node.allowDrop\"\n              [treeDrag]=\"node\"\n              [treeDragEnabled]=\"node.allowDrag()\">\n\n              <tree-node-content [node]=\"node\" [index]=\"index\" [template]=\"templates.treeNodeTemplate\">\n              </tree-node-content>\n            </div>\n          </div>\n\n        <tree-node-children [node]=\"node\" [templates]=\"templates\"></tree-node-children>\n        <tree-node-drop-slot [dropIndex]=\"node.index + 1\" [node]=\"node.parent\"></tree-node-drop-slot>\n      </div>\n      <template\n        [ngTemplateOutlet]=\"templates.treeNodeFullTemplate\"\n        [ngOutletContext]=\"{ $implicit: node, node: node, index: index, templates: templates }\">\n      </template>\n    </div>"
+        template: "\n    <div *mobxAutorun>\n      <div\n        *ngIf=\"!templates.treeNodeFullTemplate\"\n        class=\"tree-node tree-node-level-{{ node.level }}\"\n        [class]=\"node.getClass()\"\n        [class.tree-node-expanded]=\"node.isExpanded && node.hasChildren\"\n        [class.tree-node-collapsed]=\"node.isCollapsed && node.hasChildren\"\n        [class.tree-node-leaf]=\"node.isLeaf\"\n        [class.tree-node-active]=\"node.isActive\"\n        [class.tree-node-focused]=\"node.isFocused\">\n\n        <tree-node-drop-slot *ngIf=\"index === 0\" [dropIndex]=\"node.index\" [node]=\"node.parent\"></tree-node-drop-slot>\n\n          <div class=\"node-wrapper\" [style.padding-left]=\"node.getNodePadding()\">\n            <tree-node-expander [node]=\"node\"></tree-node-expander>\n            <div class=\"node-content-wrapper\"\n              (click)=\"node.mouseAction('click', $event)\"\n              (dblclick)=\"node.mouseAction('dblClick', $event)\"\n              (contextmenu)=\"node.mouseAction('contextMenu', $event)\"\n              (treeDrop)=\"node.onDrop($event)\"\n              [treeAllowDrop]=\"node.allowDrop\"\n              [treeDrag]=\"node\"\n              [treeDragEnabled]=\"node.allowDrag()\">\n\n              <tree-node-content [node]=\"node\" [index]=\"index\" [template]=\"templates.treeNodeTemplate\">\n              </tree-node-content>\n            </div>\n          </div>\n\n        <tree-node-children [node]=\"node\" [templates]=\"templates\"></tree-node-children>\n        <tree-node-drop-slot [dropIndex]=\"node.index + 1\" [node]=\"node.parent\"></tree-node-drop-slot>\n      </div>\n      <ng-template\n        [ngTemplateOutlet]=\"templates.treeNodeFullTemplate\"\n        [ngOutletContext]=\"{ $implicit: node, node: node, index: index, templates: templates }\">\n      </ng-template>\n    </div>"
     }),
     __metadata$5("design:paramtypes", [_angular_core.ElementRef])
 ], exports.TreeNodeComponent);
@@ -1589,7 +1589,7 @@ exports.TreeNodeContent = __decorate$8([
     _angular_core.Component({
         selector: 'TreeNodeContent, tree-node-content',
         encapsulation: _angular_core.ViewEncapsulation.None,
-        template: "<span *ngIf=\"!template\">{{ node.displayField }}</span>\n  <template\n    [ngTemplateOutlet]=\"template\"\n    [ngOutletContext]=\"{ $implicit: node, node: node, index: index }\">\n  </template>",
+        template: "<span *ngIf=\"!template\">{{ node.displayField }}</span>\n  <ng-template\n    [ngTemplateOutlet]=\"template\"\n    [ngOutletContext]=\"{ $implicit: node, node: node, index: index }\">\n  </ng-template>",
     }),
     __metadata$6("design:paramtypes", [_angular_core.ElementRef])
 ], exports.TreeNodeContent);

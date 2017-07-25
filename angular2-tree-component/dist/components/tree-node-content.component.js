@@ -33,7 +33,7 @@ TreeNodeContent = __decorate([
     Component({
         selector: 'TreeNodeContent, tree-node-content',
         encapsulation: ViewEncapsulation.None,
-        template: "<span *ngIf=\"!template\">{{ node.displayField }}</span>\n  <template\n    [ngTemplateOutlet]=\"template\"\n    [ngOutletContext]=\"{ $implicit: node, node: node, index: index }\">\n  </template>",
+        template: "<span *ngIf=\"!template\">{{ node.displayField }}</span>\n  <ng-template\n    [ngTemplateOutlet]=\"template\"\n    [ngOutletContext]=\"{ $implicit: node, node: node, index: index }\">\n  </ng-template>",
     }),
     __metadata("design:paramtypes", [ElementRef])
 ], TreeNodeContent);

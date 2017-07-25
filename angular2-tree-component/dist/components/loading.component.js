@@ -23,7 +23,7 @@ __decorate([
 LoadingComponent = __decorate([
     Component({
         selector: 'LoadingComponent, tree-loading-component',
-        template: "<span *ngIf=\"!template\">loading...</span>\n  <template [ngTemplateOutlet]=\"template\"></template>",
+        template: "<span *ngIf=\"!template\">loading...</span>\n  <ng-template [ngTemplateOutlet]=\"template\"></ng-template>",
     }),
     __metadata("design:paramtypes", [ElementRef])
 ], LoadingComponent);
